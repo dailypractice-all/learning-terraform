@@ -33,3 +33,12 @@ resource "aws_instance" "web" {
 }
 
 // ingress means inboundaries and exgress means out boundaries
+
+
+terraform {
+  backend "s3" {
+    bucket = "terraform-b-1996"
+    key    = "sample1/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
