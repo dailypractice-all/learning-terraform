@@ -19,3 +19,11 @@ output "x" {
 variable "b" {}
 
 // this variable is declared in terraform.tfvars file
+
+variable "c" {}
+
+// this varible is taken from cli of terraform, terraform apply -auto-approve -var c=400
+
+variable "d" {}
+
+// this variable is taken from shell, export TF_VAR_d=500
