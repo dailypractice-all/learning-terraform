@@ -30,4 +30,4 @@ variable "c" {}
 
 variable "d" {}
 
-// this variable is taken from shell, export TF_VAR_d=500
+// this variable is taken from shell, export TF_VAR_d=500, so have to type command on CLI to declare d value
