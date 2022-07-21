@@ -15,3 +15,7 @@ output "x" {
 }
 
 // If you access variable with any combination of other string then ${} is preferred
+
+variable "b" {}
+
+// this variable is declared in terraform.tfvars file
