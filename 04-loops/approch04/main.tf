@@ -1,17 +1,13 @@
-resource "aws_instance" "web" {
-  count         = length(var.instance_types)
-  ami           = "ami-031303182815afa6e"
-  instance_type = var.instance_types[count.index]
-  tags = {
-    Name = "terraform-${count.index + 1}"
-  }
+module "ec2" {
+  for_each = var.instances
+  source = "./module"
+  instance_type = each.key
+  instance_count = each.value
 }
 
-variable "instance_types" {
+variable "instances" {
   default = {
-    instances = {
-      t2.small = 2,
-      t3.micro = 3
-    }
+    "t2.small" = 2,
+    "t3.micro" = 3
   }
 }
