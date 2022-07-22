@@ -1,5 +1,5 @@
 variable "no-of-instances" {
-  count = 2
+  default = 2
 }
 
 resource "aws_instance" "web" {
