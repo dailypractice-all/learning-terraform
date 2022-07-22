@@ -11,4 +11,9 @@ resource "aws_instance" "web" {
   }
 }
 
+
+output "public_ip_address" {
+  value = aws_instance.web.*.public_ip
+}
 // count.index is used to give instance a count like there are multiple instances to give them a count eg.0,1,2,3
+
