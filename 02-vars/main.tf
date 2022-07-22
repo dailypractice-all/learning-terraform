@@ -31,3 +31,11 @@ variable "c" {}
 variable "d" {}
 
 // this variable is taken from shell, export TF_VAR_d=500, so have to type command on CLI to declare d value
+
+variable "sample" {
+  default = [100, 200, "abc"]
+}
+
+output "sample" {
+  value = var.sample[1]
+}
