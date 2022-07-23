@@ -1,8 +1,6 @@
 resource "aws_instance" "web" {
-  // count      = 0 (We can make some condition to come with a value based on that this resource can be created)
   ami           = data.aws_ami.example.image_id
   instance_type = local.instance_type
-
   tags = {
     Name = "terraform"
   }
@@ -22,3 +20,5 @@ data "aws_ami" "example" {
   name_regex       = "base-with-ansible"
   owners           = ["self"]
 }
+
+// count      = 0 (We can make some condition to come with a value based on that this resource can be created)
